@@ -1,0 +1,168 @@
+\title{Unforkable blockchain cryptocurrencies with efficient zero knowledge contingent proof on mobile devices}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{float}
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE The University of Sydney}\\[1.5cm] % Name of your university/college
+\textsc{\Large School of Information Technology}\\[0.5cm] % Major heading such as course name
+\textsc{\large INFO5993 Research Methods - Assignment II}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.6cm]
+{ \huge \bfseries Unforkable Blockchain Cryptocurrencies with Efficient Zero Knowledge Contingent Proof on Mobile Devices}\\[0.4cm] % Title of your document
+\HRule \\[1.6cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Lin \textsc{Han} % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+Dr. Vincent \textsc{Gramoli} % Supervisor's Name
+\end{flushright}
+\end{minipage}\\[2cm]
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics{logo.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
+ 
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+
+% \begin{abstract}
+% Your abstract.
+% \end{abstract}
+
+\section{Introduction}
+
+From the time when Block 0 of the Bitcoin blockchain, the Genesis Block, is created at 
+18:15:05 GMT on January 3rd, 2009, the words ``cryptocurrencies'' and ``Blockchain'' become one of the most 
+popular fields in information technology. The ``decentralized'' and ``anonymous'' nature 
+of cryptocurrencies overcomes the weakness of traditional \textit{trust-based} 
+electronic payments who relies heavily on trusted third-party financial institutions. The 
+\textit{cryptographic proof-of-work} of bitcoin enables reliable transaction between 
+two parties directly. Through almost 10 years development, cryptocurrencies turns out to be 
+a large family and can be deployed onto multiple devices.
+
+Though bitcoin give a great solution on \textit{double spending} problem, it doesn't 
+mean that it is secured in all aspects. One possible issue is balance attack targeting 
+blockchain's forkable feature. Other cryptocurrencies allowing forkable chains all suffer 
+from the very same issue. In this sense, unfokable blockchain is proven to solve this problem. 
+On the other hand, another possible solution to secure transaction is 
+to adopt mechanism like \textit{zero knowledge contingent payment} which are released if 
+and only if some knowledge is disclosed by the payee and to do this in a trustless manner 
+where neither the payer or payee can cheat. Whilst there are several theoretical discussion 
+and practice in a variety of contexts, this paper will concentrate on their application on 
+cryptocurrencies blockchain, especially on mobile devices.
+
+\section{Bitcoin}
+\label{sec:Blockchain}
+
+\subsection{Blockchain}
+
+Blockchain is the way how Bitcoin keeps its public ledger. To some 
+extent, blockchain is simply a peer-to-peer distributed timestamp 
+server. The ultimate goal of this design is to solve /textit{double-spending} 
+problems and prevent modification of transaction records.
+
+Each full node in the Bitcoin network keeps a full copy of the blockchain, 
+in which all blocks validated by this particular is stored. When 
+several nodes within the network independently arrive at identical 
+blockchains, they are considered to be in \textit{consensus}.
+
+As its name suggests, a blockchain is a digital chain of blocks, where 
+a timestamp, a nonce, and a Merkle Tree is stored.  The blocks are chained 
+cryptographically using hash. In detail, each block contains the hash of its 
+previous block ,finally leading to the Genesis Block. Any modification on 
+blocks in the chain would violates all subsequent hashes, which is vital for 
+consistency of the ledger. Figure \ref{fig:blockchain} shows part of a blockchain.
+
+% blockchain figure here
+\begin{figure}[htb!]
+    \includegraphics{blockchain.png}
+    \caption{Blockchain}
+    \label{fig:blockchain}
+\end{figure}
+
+However, computing a hash is expensive. This truth enables the adoption of 
+\textit{proof-of-work} in bitcoin network.
+
+\subsection{Proof of Work}
+
+
+\subsection{Transaction}
+
+
+\subsection{Contracts}
+
+
+\section{Balance Attack}
+\label{sec:Balance Attack}
+
+
+\section{Unforkable Blockchain}
+\label{sec:Unforkable Blockchain}
+
+\subsection{Byzantine Consensus}
+
+\subsection{The Red Belly Blockchain}
+
+\section{Zero Knowledge Contingent Proof}
+\label{sec:Zero Knowledge Contingent Proof}
+
+\subsection{Bitcoin}
+
+\subsection{Zero Cash}
+
+\subsection{Efficient Implementation of Zero Knowledge Proof in Cryptocurrencies}
+
+\section{Conclusion}
+
+\newpage
+\bibliography{bibliography.bib}
+\bibliographystyle{plain}
+
+\end{document}
