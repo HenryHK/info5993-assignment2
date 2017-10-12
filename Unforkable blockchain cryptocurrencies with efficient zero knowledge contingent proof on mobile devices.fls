@@ -208,10 +208,16 @@ INPUT ./logo.png
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT Unforkable blockchain cryptocurrencies with efficient zero knowledge contingent proof on mobile devices.toc
+INPUT Unforkable blockchain cryptocurrencies with efficient zero knowledge contingent proof on mobile devices.toc
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+OUTPUT Unforkable blockchain cryptocurrencies with efficient zero knowledge contingent proof on mobile devices.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT blockchain.png
 INPUT ./blockchain.png
+INPUT ./blockchain.png
+INPUT blockchain.png
 INPUT ./blockchain.png
 INPUT Unforkable blockchain cryptocurrencies with efficient zero knowledge contingent proof on mobile devices.bbl
 INPUT Unforkable blockchain cryptocurrencies with efficient zero knowledge contingent proof on mobile devices.bbl

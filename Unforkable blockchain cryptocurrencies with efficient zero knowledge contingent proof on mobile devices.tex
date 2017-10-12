@@ -71,6 +71,10 @@ Dr. Vincent \textsc{Gramoli} % Supervisor's Name
 
 \end{titlepage}
 
+\tableofcontents
+\vfill
+
+\newpage
 
 % \begin{abstract}
 % Your abstract.
@@ -78,47 +82,18 @@ Dr. Vincent \textsc{Gramoli} % Supervisor's Name
 
 \section{Introduction}
 
-From the time when Block 0 of the Bitcoin blockchain, the Genesis Block, is created at 
-18:15:05 GMT on January 3rd, 2009, the words ``cryptocurrencies'' and ``Blockchain'' become one of the most 
-popular fields in information technology. The ``decentralized'' and ``anonymous'' nature 
-of cryptocurrencies overcomes the weakness of traditional \textit{trust-based} 
-electronic payments who relies heavily on trusted third-party financial institutions. The 
-\textit{cryptographic proof-of-work} of bitcoin enables reliable transaction between 
-two parties directly. Through almost 10 years development, cryptocurrencies turns out to be 
-a large family and can be deployed onto multiple devices.
+From the time when Block 0 of the Bitcoin blockchain, the Genesis Block, is created at 18:15:05 GMT on January 3rd, 2009, the words ``cryptocurrencies'' and ``Blockchain'' become one of the most popular fields in information technology. The ``decentralized'' and ``anonymous'' nature of cryptocurrencies overcomes the weakness of traditional \textit{trust-based} electronic payments who relies heavily on trusted third-party financial institutions. The \textit{cryptographic proof-of-work} of bitcoin enables reliable transaction between  two parties directly. Through almost 10 years development, cryptocurrencies turns out to be a large family and can be deployed onto multiple devices. 
 
-Though bitcoin give a great solution on \textit{double spending} problem, it doesn't 
-mean that it is secured in all aspects. One possible issue is balance attack targeting 
-blockchain's forkable feature. Other cryptocurrencies allowing forkable chains all suffer 
-from the very same issue. In this sense, unfokable blockchain is proven to solve this problem. 
-On the other hand, another possible solution to secure transaction is 
-to adopt mechanism like \textit{zero knowledge contingent payment} which are released if 
-and only if some knowledge is disclosed by the payee and to do this in a trustless manner 
-where neither the payer or payee can cheat. Whilst there are several theoretical discussion 
-and practice in a variety of contexts, this paper will concentrate on their application on 
-cryptocurrencies blockchain, especially on mobile devices.
+Though bitcoin give a great solution on \textit{double spending} problem, it doesn't mean that it is secured in all aspects. One possible issue is attacks targeting blockchain's forkable feature. Other cryptocurrencies allowing forkable chains all suffer from the very same issue. In this sense, unfokable blockchain is proven to solve this problem. On the other hand, another possible solution to secure transaction is to adopt mechanism like \textit{zero knowledge contingent payment} which are released if and only if some knowledge is disclosed by the payee and to do this in a trustless manner where neither the payer or payee can cheat. Whilst there are several theoretical discussion and practice in a variety of contexts, this paper will concentrate on their application on cryptocurrencies blockchain, especially on mobile devices. 
 
 \section{Bitcoin}
 \label{sec:Blockchain}
 
 \subsection{Blockchain}
 
-Blockchain is the way how Bitcoin keeps its public ledger. To some 
-extent, blockchain is simply a peer-to-peer distributed timestamp 
-server. The ultimate goal of this design is to solve /textit{double-spending} 
-problems and prevent modification of transaction records.
+Blockchain is the way how Bitcoin keeps its public ledger. To some extent, blockchain is simply a peer-to-peer distributed timestamp server. The ultimate goal of this design is to solve \textit{double-spending} problems and prevent modification of transaction records. 
 
-Each full node in the Bitcoin network keeps a full copy of the blockchain, 
-in which all blocks validated by this particular is stored. When 
-several nodes within the network independently arrive at identical 
-blockchains, they are considered to be in \textit{consensus}.
-
-As its name suggests, a blockchain is a digital chain of blocks, where 
-a timestamp, a nonce, and a Merkle Tree is stored.  The blocks are chained 
-cryptographically using hash. In detail, each block contains the hash of its 
-previous block ,finally leading to the Genesis Block. Any modification on 
-blocks in the chain would violates all subsequent hashes, which is vital for 
-consistency of the ledger. Figure \ref{fig:blockchain} shows part of a blockchain.
+Each full node in the Bitcoin network keeps a full copy of the blockchain, in which all blocks validated by this particular is stored. When several nodes within the network independently arrive at identical blockchains, they are considered to be in \textit{consensus}. As its name suggests, a blockchain is a digital chain of blocks, where a timestamp, a nonce, and a Merkle Tree is stored.  The blocks are chained cryptographically using hash. In detail, each block contains the hash of its previous block ,finally leading to the Genesis Block. Any modification on blocks in the chain would violates all subsequent hashes, which is vital for consistency of the ledger. Figure \ref{fig:blockchain} shows part of a blockchain. 
 
 % blockchain figure here
 \begin{figure}[htb!]
@@ -127,21 +102,50 @@ consistency of the ledger. Figure \ref{fig:blockchain} shows part of a blockchai
     \label{fig:blockchain}
 \end{figure}
 
-However, computing a hash is expensive. This truth enables the adoption of 
-\textit{proof-of-work} in bitcoin network.
+However, computing a hash is expensive. This truth enables the adoption of \textit{proof-of-work} in bitcoin network. 
 
 \subsection{Proof of Work}
 
+According to blockchains' feature, a huge amount of computation is required in the generation of each block. Meanwhile, there is a \textit{proof-of-work} mechanism to make the distributed timestamp server work and determine representation in majority decision making. Especially, when there are multiple chains (forked chains), consensus rules will pick up the longest chain, which contains the most proof of work during its generation.
 
-\subsection{Transaction}
-
+In this way, any malicious changes on previous blocks would violate its following blocks. That is to say, hacker with huge computing power can hijack the blockchain if he can generate the longest chain from the block he hacks, in turn, he has to own more than half of the computing power within the whole blockchain network.
 
 \subsection{Contracts}
 
+There are distributed contracts in Bitcoin transactions for agreement enforcements, which provides another way to formalize and guarantee agreements rather than traditional court system. Examples include Escrow, Micropayment channels and CoinJoin.
+
+Some of the contracts can be implemented in Bitcoin Script, especially the zero knowledge contingent payments in Bitcoin is achieved using it. However the Red Belly Blockchain doesn't have a robust script language like Bitcoin does.
+
+\section{Ethereum}
+
+\subsection{Previous Work}
+
+Bitcoin provides a protocol allowing weak implementation of \textit{smart contracts}. However, several limitations exists in Bitcoin's scripting language:
+
+\begin{enumerate}
+    \item \textbf{Not Turing-Completeness} - Bitcoin scripts lacks loops.
+    \item \textbf{Lack of States} - UTXOs scripts is only for one-off contracts.
+    \item \textbf{Blindness of Blockchain} - Bitcoin scripts cannot access blockchain data.
+    \item \textbf{Blindness of Value} - Bitcoin either consumes the entire UTXO or none of it
+\end{enumerate}
+
+\subsection{Rationale}
+
+Ethereum implements a blockchain with Turing-complete scripts, states, value awareness and blockchain awareness, which enables development of smart contracts, and even new protocols.
 
 \section{Balance Attack}
 \label{sec:Balance Attack}
 
+As the previous review mentioning, to attack a blockchain, or specifically to rewrite the content of a block, the hacker should have more than half of the computing power of the whole blockchain network which is almost unfeasible in real world. In particular, by delaying the propagation of blocks in Bitcoin system, the hacker can in result delay the growth of the longest branch of the system. In other word, he can then hijack the blockchain even without a large amount of computing power. Ethereums' ``Blockchain 2.0'' somehow fixes this problem, but there is still other possible method against forked blockchain. One practice is the \textbf{Balance Attack} against \textit{proof-of-work} blockchain systems.
+
+To achieve a balance attack within the blockchain network, the attacker should divide the network into subgroups of similar mining power by cutting off their communications. During this down time, the attacker issues transaction in the \textit{transaction group}, and mine blocks in the \textit{block group} simultaneously. This action only ends when it comes to the point where the tree of the block subgroup outweighs the tree of the transaction group, which is with high possibility. The balance, in result, can leverage the \textit{GHOST} protocol that accounts for sibling or uncle blocks to determine on a chain of blocks. This strategy allows the attacker to mine a branch regardless of the rest of the network so that he can influence the branch determination process while merging.
+
+% TODO: add balance attack figures
+\begin{figure}
+    \includegraphics{blockchain.png}
+    \caption{Blockchain}
+    \label{fig:blockchain}
+\end{figure}
 
 \section{Unforkable Blockchain}
 \label{sec:Unforkable Blockchain}

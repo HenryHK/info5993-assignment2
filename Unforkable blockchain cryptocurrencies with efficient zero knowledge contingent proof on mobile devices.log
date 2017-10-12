@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.20)  9 OCT 2017 23:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.20)  12 OCT 2017 16:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -477,7 +477,11 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box40
 )
 (./Unforkable blockchain cryptocurrencies with efficient zero knowledge conting
-ent proof on mobile devices.aux)
+ent proof on mobile devices.aux
+
+LaTeX Warning: Label `fig:blockchain' multiply defined.
+
+)
 \openout1 = `"Unforkable blockchain cryptocurrencies with efficient zero knowle
 dge contingent proof on mobile devices.aux"'.
 
@@ -493,8 +497,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
-
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
+ (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -566,39 +569,55 @@ Package pdftex.def Info: logo.png used on input line 66.
 (pdftex.def)             Requested size: 301.12425pt x 280.04555pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./logo.png>] [1]
-<blockchain.png, id=22, 232.54979pt x 505.89pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./logo.png>]
+(./Unforkable blockchain cryptocurrencies with efficient zero knowledge conting
+ent proof on mobile devices.toc)
+\tf@toc=\write4
+\openout4 = `"Unforkable blockchain cryptocurrencies with efficient zero knowle
+dge contingent proof on mobile devices.toc"'.
+
+ [1] [2]
+<blockchain.png, id=25, 232.54979pt x 505.89pt>
 File: blockchain.png Graphic file (type png)
  <use blockchain.png>
-Package pdftex.def Info: blockchain.png used on input line 125.
+Package pdftex.def Info: blockchain.png used on input line 100.
 (pdftex.def)             Requested size: 232.54921pt x 505.88875pt.
- [2]
+ [3]
+[4]
+File: blockchain.png Graphic file (type png)
+ <use blockchain.png>
+Package pdftex.def Info: blockchain.png used on input line 145.
+(pdftex.def)             Requested size: 232.54921pt x 505.88875pt.
+ [5]
 (./Unforkable blockchain cryptocurrencies with efficient zero knowledge conting
 ent proof on mobile devices.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [3] [4 <./blockchain.png>]
+) [6] [7 <./blockchain.png>] [8]
 (./Unforkable blockchain cryptocurrencies with efficient zero knowledge conting
-ent proof on mobile devices.aux) ) 
+ent proof on mobile devices.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 13253 strings out of 494953
- 261635 string characters out of 6180977
- 311005 words of memory out of 5000000
- 16257 multiletter control sequences out of 15000+600000
- 10765 words of font info for 38 fonts, out of 8000000 for 9000
+ 13257 strings out of 494953
+ 261870 string characters out of 6180977
+ 311044 words of memory out of 5000000
+ 16258 multiletter control sequences out of 15000+600000
+ 11072 words of font info for 39 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 62i,6n,56p,575b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mti12.pfb>
+ 62i,6n,56p,1010b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
 Output written on "Unforkable blockchain cryptocurrencies with efficient zero k
-nowledge contingent proof on mobile devices.pdf" (6 pages, 265229 bytes).
+nowledge contingent proof on mobile devices.pdf" (10 pages, 275001 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
