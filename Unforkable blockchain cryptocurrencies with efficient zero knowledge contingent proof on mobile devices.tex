@@ -138,19 +138,21 @@ Ethereum implements a blockchain with Turing-complete scripts, states, value awa
 
 As the previous review mentioning, to attack a blockchain, or specifically to rewrite the content of a block, the hacker should have more than half of the computing power of the whole blockchain network which is almost unfeasible in real world. In particular, by delaying the propagation of blocks in Bitcoin system, the hacker can in result delay the growth of the longest branch of the system. In other word, he can then hijack the blockchain even without a large amount of computing power. Ethereums' ``Blockchain 2.0'' somehow fixes this problem, but there is still other possible method against forked blockchain. One practice is the \textbf{Balance Attack} against \textit{proof-of-work} blockchain systems.
 
-To achieve a balance attack within the blockchain network, the attacker should divide the network into subgroups of similar mining power by cutting off their communications. During this down time, the attacker issues transaction in the \textit{transaction group}, and mine blocks in the \textit{block group} simultaneously. This action only ends when it comes to the point where the tree of the block subgroup outweighs the tree of the transaction group, which is with high possibility. The balance, in result, can leverage the \textit{GHOST} protocol that accounts for sibling or uncle blocks to determine on a chain of blocks. This strategy allows the attacker to mine a branch regardless of the rest of the network so that he can influence the branch determination process while merging.
+To achieve a balance attack within the blockchain network, the attacker should divide the network into subgroups of similar mining power by cutting off their communications. During this down time, the attacker issues transaction in the \textit{transaction group}, and mine blocks in the \textit{block group} simultaneously. This action only ends when it comes to the point where the tree of the block subgroup outweighs the tree of the transaction group, which is with high possibility. The balance, in result, can leverage the \textit{GHOST} protocol that accounts for sibling or uncle blocks to determine on a chain of blocks. This strategy allows the attacker to mine a branch regardless of the rest of the network so that he can influence the branch determination process while merging. The process is as shown in Figure \ref{fig:balance_attack}.
 
 % TODO: add balance attack figures
 \begin{figure}
-    \includegraphics{blockchain.png}
-    \caption{Blockchain}
-    \label{fig:blockchain}
+    \includegraphics{balance_attack.png}
+    \caption{Balance Attack}
+    \label{fig:balance_attack}
 \end{figure}
 
 \section{Unforkable Blockchain}
 \label{sec:Unforkable Blockchain}
 
 \subsection{Byzantine Consensus}
+
+
 
 \subsection{The Red Belly Blockchain}
 
