@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{float}
+\usepackage{csquotes}
 
 \begin{document}
 
@@ -173,18 +174,45 @@ Democratic Byzantine Fault Tolerance is a system specially tailored for consorti
     \item If all correct participant propose the the same value, then no other value can be deiced
 \end{enumerate}
 
-In safe Democratic Byzantine Fault Tolerance, a mechanism called binary broadcast for binary Byzantine Consensus system is adopted.
+In safe Democratic Byzantine Fault Tolerance, a mechanism called binary broadcast for binary Byzantine Consensus system is adopted. To conclude, there are four aspects that is strictly followed within DBFT:
+
+\begin{enumerate}
+    \item \textbf{Binary Value Obligation} - if t+1 correct BV-broadcats $v$, then $v$ is eventually added to the set binary values of all correct process.
+    \item \textbf{Binary Value Justification} - if $p_i$ is correct and and $v$ in $binary-values_i$ then $v$ was broadcasted by a correct process.
+    \item \textbf{Binary Value Uniformity} - if $v$ is added to $binary-value_i$ of correct $p_i$, then eventually $v$ will be in $binary-value_j$ for all correct $p_j$.
+    \item \textbf{Binary Value Termination} - eventually $binary-value$ of correct $p_i$ is not empty. 
+\end{enumerate}
 
 \subsection{The Red Belly Blockchain}
 
-\section{Zero Knowledge Contingent Proof}
-\label{sec:Zero Knowledge Contingent Proof}
+Red Belly Blockchain is new blockchain relying on the Democratic BFT. The \textit{Genesis Block} of this blockchain contains the initial information as well as a list of n participants. All accesses of external nodes requires these participants as the middleware. In this case, a transaction is regarded as committed if $t+1$ participating nodes agreed so it can be written into next block.
+
+The performance of this new blockchain is quite good. It can achieve more than 400 transactions per second and with great scalability up to 90 server nodes.
+
+\section{Zero Knowledge Contingent Payment}
+\label{sec:Zero Knowledge Contingent Payment}
 
 \subsection{Bitcoin}
 
-\subsection{Efficient Implementation of Zero Knowledge Proof in Cryptocurrencies}
+Zero Knowledge Contingent Payment in Bitcoin is first proposed by Gregory Maxwell in 2011 on Bitcoin Wiki. The basic process can be illustrated by an example:
+
+\begin{displayquote}
+    Alice is a fan of Sudoku puzzle. However, there is a puzzle that she is trying days but in vain. She gives up and broadcasts a message within a fan group proclaiming that ``I will pay whoever solves this puzzle.'' Bob see the broadcast, solves it, and want to sell the result to Alice. The problem is either Alice or Bob is willing to be the first person to give out what they have.
+
+    To solve this dilemma, Alice and Bob goes for a Bitcoin, which allows one to issue a transaction and also specify the conditions to be met in order to claim the transaction. In this case, Alice propose a payment transaction to blockchain that includes encoded Sudoku puzzle and the rules. Whoever solves the puzzle is able to get the fund.
+
+    Using the Bitcoin ZKCP protocol, Bob knows a solution $s$ and encrypts the solution using a key $k$ such that $Enc_k(s)=c$ and he computes $y$ such that $SHA256(k)=y$. He then send the key $k$ and $c$ to Alice together with a zero knowledge proof that $c$ is an encryption of $s$ under the key $k$ and  that $SHA256(k)=y$. Once Alice has verified the proof, she creates a transaction to the blockchain that pays Bob $n$ bitcoins, and says that Bob can only claim the coins if he provides the value $k'$ such that $SHA256(k')=y$. Bob then published $k$ and claims the fund. In this way, Alice learns $k$ can decrypt c so that she knows the solution $s$
+\end{displayquote}
+
+Specifically in Blockchain, the ZKCP protocol now has several practices rather than theory. One is ZK-SNARK protocols allowing for the practical implementation of the necessary proofs.
+
+\subsection{Zero Knowledge Contingent Payment without Scripts}
+
+However, all implemented ZKCP protocols now are based on scripting language in traditional forkable blockchain. Besides, there is no convincing data of its performance on modern mobile devices.
 
 \section{Conclusion}
+
+In this literature review, we can see that unforkable blockchain has a more reliable security guarantee compared to traditional forkable blockchain used in mainstream cryptocurrencies. The need to deploy unforkable blockchain and implement ZKCP-enable protocols onto mobile devices is evident through the literatures to fulfill the gaps between the theoretical discussion and real life application. Deploying ZKCP-enbale unforkable blockchains onto mobile devices will benefit both authorities seeking reliable blockchain solutions and users having trust problems with third-parties.
 
 \newpage
 \bibliography{bibliography.bib}
